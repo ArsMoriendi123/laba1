@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+
+int main(int argc, char *argv[]) {
+
+    double a, b, c, d, x1, x2;
+    printf("Enter a: ");
+    scanf("%lf", &a); 
+    printf("Enter b: ");
+    scanf("%lf", &b); 
+    printf("Enter c: ");
+    scanf("%lf", &c); 
+
+    d = pow(b, 2) - 4 * a * c; 
+
+    printf("a = %lf, b = %lf, c = %lf\n", a, b, c);
+    printf("d = %lf\n", d);
+
+    if (d < 0 || a == 0) {
+        printf("No real roots");
+    } else if (d == 0) {
+        x1 = (-b - sqrt(d)) / (2 * a);
+        printf("d = 0, x1 = %lf", x1);
+    } else {
+        x1 = (-b + sqrt(d)) / (2 * a);
+        x2 = (-b - sqrt(d)) / (2 * a);
+        printf("d > 0 => x1 = %lf, x2 = %lf", x1, x2);
+    }
+    return 0;
+}
